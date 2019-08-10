@@ -1,0 +1,135 @@
+@extends('admin.master.adminmaster')
+@section('title')
+MeroCSIT | Admin Dashboard |Home
+@endsection
+@section('active1')
+"active"
+@endsection
+@section('container')
+<div class="container-fluid">
+@include('admin.admin_partials.admin_sidenav')
+<div class="user-dashboard">
+      <h1>HELLO THIS IS MY DASHBOARD</h1>
+</div>
+
+</div>
+@endsection
+
+
+
+
+<div class="container">
+    <div class="col-sm-12 no-gutter">
+        @foreach($available_course as $displaycourse)
+    	<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><strong>{{$displaycourse->subject}}</strong><div class=" small pull-right text-right">{{ $displaycourse->created_at->format('H-i-a')}}<br>{{ $displaycourse->created_at->format('Y-m-d')}}</div></h3>
+
+
+			</div>
+			<div class="panel-body">
+        <h4>Semester:{{$displaycourse->semester}}</h4>
+				<h4>Credit Hours:{{$displaycourse->credit_hours}}</h4>
+          <h4>Description</h4>
+     {!! $displaycourse->course_description !!}
+      <h4><a href="{{asset('course_file/'.$displaycourse->file)}} ">Course File</a></h4>
+
+			<div class="col-xs-1 panel-footer  things">
+					<a class="delete" del="{{route('course_delete',$displaycourse->course_id)}}"><i class="fa fa-trash"></i></a>
+			</div>
+      <br/>
+
+
+
+
+		</div>
+
+	</div>
+    @endforeach
+</div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      <div class="container">
+          <div class="col-sm-12 no-gutter">
+              @foreach($available_course as $displaycourse)
+          	<div class="panel panel-default">
+      			<div class="panel-heading">
+      				<h3 class="panel-title"><strong>Subject: &nbsp</strong> {{$displaycourse->subject}}<div class=" small pull-right text-right">{{ $displaycourse->created_at->format('H-i a')}}<br>{{ $displaycourse->created_at->format('Y-m-d')}}</div></h3>
+
+
+      			</div>
+      			<div class="panel-body">
+              <h5><b>Semester:</b> &nbsp{{$displaycourse->semester}}</h5><hr>
+      				<h5><b>Credit Hours:</b> &nbsp{{$displaycourse->credit_hours}}</h5><hr>
+                <h5><b>Description:</b></h5>
+            {!! $displaycourse->course_description !!}<hr>
+            <h5><a href="{{asset('course_file/'.$displaycourse->file)}}" style="text-decoration:none;color:blue;"><b>Course File</b></a></h5><hr>
+      			<div class="col-xs-1 panel-footer  things">
+      					<a class="delete" del="{{route('course_delete',$displaycourse->course_id)}}"><i class="fa fa-trash"></i></a>
+      			</div>
+            <br/>
+
+
+
+
+      		</div>
+
+      	</div>
+          @endforeach
+      </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="container">
+              <div class="col-sm-12 no-gutter">
+                @foreach($available_event as $displayevent)
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Subject: &nbsp</strong> {{$displayevent->event_name}}<div class=" small pull-right text-right">{{ $displayevent->created_at->format('H-i a')}}<br>{{ $displayevent->created_at->format('Y-m-d')}}</div></h3>
+
+
+                  </div>
+                  <div class="panel-body">
+
+                    <h5><b>Description:</b></h5>
+                    {!! $displayevent->event_description !!}<hr>
+                    <h5><b>Event location:</b> &nbsp{{$displayevent->event_location}}</h5><hr>
+
+
+                    <div class="col-xs-1 panel-footer  things">
+                      <a class="delete" del="{{route('event_delete',$displayevent->event_id)}}"><i class="fa fa-trash"></i></a>
+                    </div>
+                    <br/>
+
+
+
+
+                  </div>
+
+                </div>
+                @endforeach
+              </div>
+            </div>

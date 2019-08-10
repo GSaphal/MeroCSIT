@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0px;
+	padding:0px;
+}
+.back
+{
+	background:url(../img/importedmedia.jpg) no-repeat center;
+	min-height:974px;	
+}
+.blur
+{
+	background:rgba(0,0,0,0.5);
+	min-height:974px;	
+}
+.col1
+{
+	background:white !Important; 
+	height:500px;
+	margin-top:70px;
+}
+
+.navbar-brand 
+{
+	padding-top:10px;
+}
+
+.navbar-brand  h1
+{
+	font-family:Satisfy;
+	font-size:28px;
+	color:white;
+}
+.navbar-brand  h1 i
+{
+	color:red;
+	margin-right:60px;
+}
+.bg-light
+{
+	background:#0CF!important;
+}
+.navbar-light .navbar-nav .active>.nav-link,.navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link,.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link.active
+{
+	color:white;
+	font-family: 'Open Sans', sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	line-height:20px;
+	padding:20px;
+}
